@@ -5,14 +5,15 @@
 void switcher()
 {
 	system("CLS");
-	int n = 5;
+	int n = -1;
 	std::cout << "1. Najkraci put izmedu cvorova (Djikstra)" << std::endl;
 	std::cout << "2. Monoabecedna supstitucija" << std::endl;
 	std::cout << "3. Poliabecedna supstitucija (Vigenere)" << std::endl;
 	std::cout << "4. Desifriranje kljuceva" << std::endl;
+	std::cout << "5. Stupcana transpozicija sifriranje/desifriranje" << std::endl;
 	std::cout << "0. Izlaz" << std::endl;
 	std::cout << "Unesite odabir:" << std::endl;
-	do{std::cin >> n;} while (n < 0 || n>4);
+	do{std::cin >> n;} while (n < 0 || n>5);
 	std::string recenica;
 	std::string kljuc;
 	int intkljuc, provjera=0;
@@ -111,6 +112,22 @@ void switcher()
 		else
 			break;
 	}
+case 5:
+{
+	system("CLS");
+	std::cout << "Otvaram web stranicu." << std::endl;
+	ShellExecute(0, 0, L"https://www.boxentriq.com/code-breaking/columnar-transposition-cipher", 0, 0, SW_SHOW);
+	std::cout << "Ako zelite nazad na odabir unesite 1." << std::endl;
+	std::cin >> provjera;
+	if (provjera == 1)
+	{
+		switcher();
+		break;
+	}
+	else
+		break;
+}
+
 	case 0:
 	{
 		break;
